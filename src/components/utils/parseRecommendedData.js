@@ -6,7 +6,7 @@ import {timeSince} from './timeSince';
 
 const API_KEY = process.env.REACT_APP_STREAMING_APP_API;
 
-export const parseData = async(items) => {
+export const parseRecommendedData = async(items) => {
    
 try{
     const videoIds = [];
@@ -52,11 +52,9 @@ try{
                 videoDuration: parseVideoDuration(
                     videosData[index].contentDetails.duration
                 ),
-
                 videoViews: convertRawToString(
                     videosData[index].statistics.viewCount
                 ),
-               
                 videoAge: timeSince(new Date(item.snippet.publishedAt)
                 ),
                 channelInfo: {

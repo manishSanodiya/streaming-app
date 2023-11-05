@@ -46,8 +46,8 @@ const Search = () => {
           >
             
               {videos.map((item)=>{
-                return (<div className="my-5">
-                <SearchCard data={item} key={item.videoId}/>
+                return (<div className="my-5" key={item.videoId}>
+                <SearchCard data={item} />
                 </div>
                 )
               })}
